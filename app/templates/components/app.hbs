@@ -1,0 +1,32 @@
+<!-- Main application; displays the header, a list of posts, and some
+pagination buttons. -->
+
+<h1 class="flex bg-blue-lightest border-b
+  border-blue-lighter text-center h-32
+  items-center justify-center">
+  Posts
+</h1>
+
+<Posts
+  @postsToShow={{somePosts}}
+  @postClicked={{action "showDetailWindow"}}
+/>
+
+<Pagination
+  @numPostsPerPage={{this.numPostsPerPage}}
+  @pageCount={{this.numPages}}
+  @currentPage={{this.pageToShow}}
+  @onFirstPage={{action "showFirstPage"}}
+  @onPrevPage={{action "showPrevPage"}}
+  @onNextPage={{action "showNextPage"}}
+  @onLastPage={{action "showLastPage"}}
+/>
+
+{{#if this.selectedPostId}}
+  <PostDetail
+    @selectedPostId={{this.selectedPostId}}
+    @postData={{this.selectedPostData}}
+    @userData={{this.userData}}
+    @onClose={{action "hideDetailWindow"}}
+  />
+{{/if}}

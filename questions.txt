@@ -1,0 +1,8 @@
+Q1 - How do I initialize empty objects in Ember? I have:
+    selectedPostData: {},
+    userData: {},
+  in app.js. There is an Ember way to initialize empty arrays, but I haven't
+  found the corresponding method for objects (the server complains about this).
+
+Q2 - I can attach a click action to a div or span and it works fine. Why does
+  the server complain about it? What is the work-around?

@@ -1,0 +1,46 @@
+
+<div class="flex justify-center">
+  {{#if hasPrevPage}}
+    <button class="mx-1 page-btn hover:bg-blue-light focus:outline-none"
+      onclick={{action @onFirstPage}}>
+      <i class="material-icons">fast_rewind</i>
+    </button>
+  {{else}}
+    <button class="mx-1 page-btn page-disabled-btn focus:outline-none">
+      <i class="material-icons">fast_rewind</i>
+    </button>
+  {{/if}}
+
+  {{#if hasPrevPage}}
+    <button class="mx-1 page-btn hover:bg-blue-light focus:outline-none"
+      onclick={{action @onPrevPage}}>
+      <i class="material-icons">keyboard_arrow_left</i>
+    </button>
+  {{else}}
+    <button class="mx-1 page-btn page-disabled-btn focus:outline-none">
+      <i class="material-icons">keyboard_arrow_left</i>
+    </button>
+  {{/if}}
+
+  {{#if hasNextPage}}
+    <button class="mx-1 page-btn hover:bg-blue-light focus:outline-none"
+      onclick={{action @onNextPage}}>
+      <i class="material-icons">keyboard_arrow_right</i>
+    </button>
+  {{else}}
+    <button class="mx-1 page-btn page-disabled-btn focus:outline-none">
+      <i class="material-icons">keyboard_arrow_right</i>
+    </button>
+  {{/if}}
+
+  {{#if hasNextPage}}
+    <button class="mx-1 page-btn hover:bg-blue-light focus:outline-none"
+      onclick={{action @onLastPage}}>
+      <i class="material-icons">fast_forward</i>
+    </button>
+  {{else}}
+    <button class="mx-1 page-btn page-disabled-btn focus:outline-none">
+      <i class="material-icons">fast_forward</i>
+    </button>
+  {{/if}}
+</div>

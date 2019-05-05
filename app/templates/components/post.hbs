@@ -1,0 +1,15 @@
+<!-- Template for one 'post' line displayed; we normally display 10 of these
+per page. -->
+
+<div class="inline-flex items-center leading-tight">
+  <div onclick={{action @postClicked2 id}}>
+    <span class="flex w-8 rounded-full bg-blue cursor-pointer
+      hover:bg-blue-light custom-y
+      uppercase px-1 text-xs justify-center font-bold mr-3">
+      {{id}}
+    </span>
+  </div>
+  <div onclick={{action @postClicked2 id}}>
+    <span class="hover:text-blue cursor-pointer capitalize">{{title}}</span>
+  </div>
+</div>
