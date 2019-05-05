@@ -25,10 +25,10 @@ export default function() {
   */
 
   //this.urlPrefix = 'https://jsonplaceholder.typicode.com';
-  this.namespace = 'api';
+  this.namespace = 'https://jsonplaceholder.typicode.com';
   this.timing = 400;
 
-  this.get('/posts', () => {
+  this.get('/', () => {
     return {
       posts: [
         {id: 1, title: "post 1", body: "body of post 1"},

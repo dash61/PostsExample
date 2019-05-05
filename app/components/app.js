@@ -19,7 +19,7 @@ export default Component.extend({
 
   async init() {
     this._super(...arguments);
-    console.log("comp app.js - init");
+    //console.log("comp app.js - init");
     const data = await this.get('ajax').request(BASE_URL + POSTS_URL,
       { method: 'GET' });
     this.set('totalPosts', data.length);
@@ -27,21 +27,21 @@ export default Component.extend({
     this.set('allPosts', data);
     this.loadSubSetOfPosts();
 
-    console.log("comp app.js - got data=", data);//debug
-    console.log("comp app.js - init - totalPosts=",
-      this.totalPosts, ", numPages=", this.numPages);
-    console.log("comp app.js - got some data=", this.somePosts);//debug
+    // console.log("comp app.js - got data=", data);//debug
+    // console.log("comp app.js - init - totalPosts=",
+    //   this.totalPosts, ", numPages=", this.numPages);
+    // console.log("comp app.js - got some data=", this.somePosts);//debug
   },
 
-  allPosts: A([]),      // gathered from https://jsonplaceholder.typicode.com
-  somePosts: A([]),     // just those we are viewing now
-  totalPosts: 0,        // total of allPosts
-  numPages: 1,          // number of pages we can paginate through
-  numPostsPerPage: 10,  // max; could make a component to change this
-  selectedPostId: 0,    // non-zero if user clicks a post title
-  selectedPostData: {}, // to be filled with post info that user clicked on
-  userData: {},         // data of user associated with a selected post
-  pageToShow: 1,        // changes if user paginates; starts at 1
+  allPosts: A([]),        // gathered from https://jsonplaceholder.typicode.com
+  somePosts: A([]),       // just those we are viewing now
+  totalPosts: 0,          // total of allPosts
+  numPages: 1,            // number of pages we can paginate through
+  numPostsPerPage: 10,    // max; could make a component to change this
+  selectedPostId: 0,      // non-zero if user clicks a post title
+  selectedPostData: null, // to be filled with post info that user clicked on
+  userData: null,         // data of user associated with a selected post
+  pageToShow: 1,          // changes if user paginates; starts at 1
 
   // Helper function to load a 'page' of posts from allPosts into somePosts.
   // somePosts gets passed down to child components.
@@ -49,8 +49,8 @@ export default Component.extend({
     let start = ((this.pageToShow - 1) * this.numPostsPerPage);
     let numLastPage = Math.min(this.totalPosts-start, this.numPostsPerPage);
     let end = start + numLastPage;
-    console.log("ds comp app.js - start=", start, ", end=", end,
-      ", numLastPage=", numLastPage);
+    // console.log("ds comp app.js - start=", start, ", end=", end,
+    //   ", numLastPage=", numLastPage);
     let subSet = this.allPosts.slice(start, end);
     this.set('somePosts', subSet);
   },

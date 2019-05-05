@@ -11,7 +11,6 @@ module('Integration | Component | app', function(hooks) {
     // Handle any actions with this.set('myAction', function(val) { ... });
 
     await render(hbs`{{app}}`);
-
     assert.equal(this.element.textContent.trim(), '');
 
     // Template block usage:
