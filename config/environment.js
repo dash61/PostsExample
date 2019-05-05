@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = function(environment) {
-  console.log("environment.js - environment=", environment);//drl debug
   let ENV = {
     modulePrefix: 'posts-ember-example',
     environment,
