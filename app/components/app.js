@@ -19,18 +19,12 @@ export default Component.extend({
 
   async init() {
     this._super(...arguments);
-    //console.log("comp app.js - init");
     const data = await this.get('ajax').request(BASE_URL + POSTS_URL,
       { method: 'GET' });
     this.set('totalPosts', data.length);
     this.set('numPages', Math.ceil(this.totalPosts / this.numPostsPerPage));
     this.set('allPosts', data);
     this.loadSubSetOfPosts();
-
-    // console.log("comp app.js - got data=", data);//debug
-    // console.log("comp app.js - init - totalPosts=",
-    //   this.totalPosts, ", numPages=", this.numPages);
-    // console.log("comp app.js - got some data=", this.somePosts);//debug
   },
 
   allPosts: A([]),        // gathered from https://jsonplaceholder.typicode.com
@@ -49,8 +43,6 @@ export default Component.extend({
     let start = ((this.pageToShow - 1) * this.numPostsPerPage);
     let numLastPage = Math.min(this.totalPosts-start, this.numPostsPerPage);
     let end = start + numLastPage;
-    // console.log("ds comp app.js - start=", start, ", end=", end,
-    //   ", numLastPage=", numLastPage);
     let subSet = this.allPosts.slice(start, end);
     this.set('somePosts', subSet);
   },

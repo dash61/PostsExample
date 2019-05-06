@@ -8,10 +8,13 @@ module('Integration | Helper | eq', function(hooks) {
 
   // Replace this with your real tests.
   test('it renders', async function(assert) {
-    this.set('inputValue', '1234');
+    const str1 = "abc123";
+    const str2 = "abc123";
+    this.set('string1', str1);
+    this.set('string2', str2);
 
-    await render(hbs`{{eq inputValue}}`);
+    await render(hbs`{{eq string1 string2}}`);
 
-    assert.equal(this.element.textContent.trim(), '1234');
+    assert.equal(this.element.textContent.trim(), 'abc123');
   });
 });

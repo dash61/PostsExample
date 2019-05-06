@@ -1,29 +1,22 @@
 import { module, test } from 'qunit';
-import { setupRenderingTest } from 'ember-qunit';
-import { render, click, find } from '@ember/test-helpers';
+import { setupRenderingTest, setupTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | pagination', function(hooks) {
-  setupRenderingTest(hooks);
+module('Integration | Pagination component exists', function(hooks) {
+  setupTest(hooks);
 
-  test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
-    await render(hbs`{{pagination}}`);
-    assert.equal(this.element.textContent.trim(), '');
-
-    const selector = find('#nextPageBtn');
-    await click(selector);
-
-    // Template block usage:
-    await render(hbs`
-      {{#pagination}}
-        template block text
-      {{/pagination}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+  test('component pagination exists', async function(assert) {
+    let component = this.owner.lookup('component:pagination');
+    assert.ok(component);
   });
 });
-//assert.ok(this.element.querySelector('button').disabled, 'Button is disabled');
+
+module('Integration | Pagination component renders', function(hooks) {
+  setupRenderingTest(hooks);
+
+  test('render test', async function(assert) {
+    await render(hbs`{{pagination}}`);
+    assert.ok(this.element.querySelector('i'));
+  });
+});
