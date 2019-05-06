@@ -2,6 +2,10 @@
 
 This is a simple example of using Ember and Tailwind to view some posts from the https://jsonplaceholder.typicode.com site. It also uses ember-ajax.
 
+## Screenshot
+
+![screenshot](https://imgur.com/ahts2Ir.png)
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
