@@ -1,7 +1,6 @@
 # posts-ember-example
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is a simple example of using Ember and Tailwind to view some posts from the https://jsonplaceholder.typicode.com site. It also uses ember-ajax.
 
 ## Prerequisites
 
